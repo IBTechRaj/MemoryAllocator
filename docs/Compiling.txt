@@ -1,0 +1,26 @@
+Creating Shared Library
+
+1. Split the file mem2.c into two.  From Line 1 to the line before main().  That means we are keeping all the functions in first file.  Name the first file 'mylib.c'.  Keep the rest of the code from main() in the second file and name it 'mymain.c'. Also copy the top lines of #include statements and variable declarations (code upto Mem_Init() func) and keep in the beginning of 'mymain.c'.
+(*** I have already split the file for you and attaching along with full program in mem3.c)
+
+2. run the command 'gcc -c -fpic mylib.c -Wall -Werror'
+
+this will create an object file named 'mylib.o'.
+
+3. run the command 'gcc -shared -o libmylib.so mylib.o
+
+this will create a shared library file named 'libmylib.so'.
+
+4. run the command 'gcc  -L. -Wall -o myprog mymain.c -lmylib' 
+
+this will link the 'mymain.c' to the shared library 'libmylib.so' and create executable file 'myprog'.
+
+---------
+
+Now to run this program, we need to set up environment variable LD_LIBRARY_PATH
+
+1. from command prompt type 'LD_LIBRARY_PATH=/home/usr/......:$LD_LIBRARY_PATH' (your directory where the program just created exists.
+
+2. from command prompt type 'export LD_LIBRARY_PATH=/home/usr/......:$LD_LIBRARY_PATH'
+
+Now you can run your program by typing './myprog'

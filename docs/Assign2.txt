@@ -1,0 +1,9 @@
+1. Change xv6 to cause Exception when program dereference Null pointer. (Create a prog)
+	- exec()
+	- fork()
+	- look through the code(xv6) for assumptions
+	- look at make file
+	- demonstrate what happens when code access null ptr
+
+
+2. - do - ...... to rerrange address space to place stack at high end.

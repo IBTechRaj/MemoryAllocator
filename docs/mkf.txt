@@ -1,0 +1,10 @@
+all:	myprog
+
+myprog:	mymain.c libmylib.so
+	gcc -L. -Wall -o myprog mymain.c -lmylib
+
+libmylib.so:	mylib.o
+	gcc -shared -o libmylib.so mylib.o
+
+mylib.o:	mylib.c
+	gcc -c -fpic mylib.c -Wall -Werror
