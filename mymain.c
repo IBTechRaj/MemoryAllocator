@@ -158,7 +158,7 @@ int main()
 	if ((freed=Mem_Free(curr_ptr1))==0)
 	printf("\nNow Available Memory is %d bytes\n", Mem_Available());
 	else
-	priontf(" Address not Available ");
+	printf(" Address not Available ");
 
 	if ((freed=Mem_Free(curr_ptr2))==0)
 	printf("\nNow Available Memory is %d bytes\n", Mem_Available());
